@@ -1,0 +1,8 @@
+name: RamboBooster
+version: '${project.version}'
+main: nl.canify.rambobooster.RamboBooster
+api-version: 1.18
+authors: [ Canify ]
+description: Booster plugin for RamboMC
+depend:
+  - mcMMO

@@ -1,0 +1,36 @@
+minutes: 60
+messages:
+  booster-activated: "%booster_owner% heeft een booster geactiveerd!"
+  booster-deactivated: "De booster van %booster_owner% is afgelopen!"
+  tip-player: "Je hebt %booster_owner% bedankt voor zijn booster!"
+  tipped-player: "%tipper% heeft je bedankt voor je booster!"
+  no-boosters: "Je hebt geen boosters. Koop een booster op shop.rambomc.nl"
+  already-active: "Er is op dit moment al een booster actief. Actiever je booster hierna."
+  no-active: "Er is op dit moment geen booster actief."
+  no-active-player: "Deze speler heeft op dit moment geen booster aan."
+  already-tipped: "Je hebt deze speler al bedankt."
+  self-tip: "Je kan jezelf niet bedanken..."
+  tip-help:
+    - "Als er een booster actief is kan degene die de booster"
+    - "heeft geactiveerd bedanken door middel van /tip <speler>."
+    - "De speler krijgt dan een klein bedankje namens jou."
+    - "Zelf ook een booster activeren? Koop op shop.rambomc.nl"
+tip-command: "playerpoints:points add %booster_owner% 10"
+gui:
+  title: "&c&lBOOSTERS"
+  booster:
+    name: "&aBoosters"
+    lore:
+      - "&7Klik &fhier &7om een booster te activeren."
+      - "&7Jij hebt &f%boosters% &7beschikbaar."
+  booster-help:
+    name: "&aHoe werken boosters?"
+    lore:
+      - "&7Boosters &7kunnen op elk moment"
+      - "&fgeactiveerd &7worden. Wanneer er een"
+      - "&7booster &factief &7is, krijg elke speler"
+      - "&7die online is &f2x mcMMO XP &7en &f2x normale XP&7."
+      - " "
+      - "&7Boosters zijn verkrijgbaar via"
+      - "&7de winkel: &fshop.rambomc.nl"
+

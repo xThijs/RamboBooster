@@ -24,7 +24,6 @@ public class Booster {
     private final long startTime;
     private final long endTime;
     private final long difference;
-    private boolean active;
     private final BossBar bossBar;
 
     private final BoosterManager manager;
@@ -36,7 +35,7 @@ public class Booster {
         this.owner = owner;
         this.manager = RamboBooster.getInstance().getManager();
         this.startTime = System.currentTimeMillis();
-        this.endTime = startTime + (20_000L * 1); // MOET 60.000 ZIJN
+        this.endTime = startTime + (60_000L * Config.MINUTES);
         this.difference = endTime - startTime;
         booster = this;
         tipped = new ArrayList<>();
@@ -62,7 +61,8 @@ public class Booster {
                 double differenceNow = (double) endTime - (double) System.currentTimeMillis();
                 int seconds = (int) (differenceNow / 1000) % 60 ;
                 int minutes = (int) ((differenceNow / (1000*60)) % 60);
-                bossBar.setTitle(ChatColor.GREEN + RamboBooster.getInstance().getServer().getOfflinePlayer(owner).getName() + "'s " + ChatColor.WHITE + "booster " + ChatColor.RED + "(" + minutes + ":" + seconds +")");
+                bossBar.setTitle(ChatColor.GREEN + RamboBooster.getInstance().getServer().getOfflinePlayer(owner).getName() + "'s " + ChatColor.WHITE + "booster " +
+                        ChatColor.RED + "(" + (minutes >= 10 ? "" : "0") + minutes + ":" + (seconds >= 10 ? "" : "0") + seconds +")");
 
                 double percentage = differenceNow / difference;
                 if (differenceNow < 0) {
@@ -78,9 +78,6 @@ public class Booster {
         manager.addBooster(this);
     }
 
-    public void setActive(boolean active) {
-        this.active = active;
-    }
     public void cancelTask() {task.cancel();}
 
     public UUID getOwnerUUID() {
